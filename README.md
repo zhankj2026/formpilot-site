@@ -37,10 +37,13 @@ git push          # 注意下面的 insteadOf 坑，可能需带 GIT_CONFIG_GLOB
 schannel 握手失败（`SSL/TLS connection failed`），且 `GIT_TERMINAL_PROMPT=0` 下无法输密码，
 表现为 `git push` 直接报 `unable to access 'https://github.com/...'`。
 
-绕开办法（不改全局配置，用一份空的全局配置覆盖本条命令）：
+绕开办法（不改全局配置，用一份空的全局配置覆盖本条命令）。注意 Windows 版 git 不认 `/tmp`，
+要写 Windows 风格路径：
 
 ```bash
-GIT_CONFIG_GLOBAL=/path/to/empty-gitconfig \
+: > "C:/Users/zhankj/.workbuddy/.gitconfig-nourl"        # 只需建一次；内容为空即可
+cd /f/aigen/formpilot-site && \
+GIT_CONFIG_GLOBAL="C:/Users/zhankj/.workbuddy/.gitconfig-nourl" \
 GIT_SSH_COMMAND="ssh -o BatchMode=yes" \
 git push -u origin main
 ```

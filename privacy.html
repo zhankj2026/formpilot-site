@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>隐私政策 — 智填 FormPilot</title>
+<meta name="description" content="智填 FormPilot 浏览器扩展隐私政策：本地优先、最小发送、匿名统计。档案与设置只保存在本机浏览器。" />
+<style>
+  :root { --accent: #2563eb; --bg:#ffffff; --bg2:#f6f8fb; --text:#1a2233; --muted:#5b6472; --border:#e3e8ef; --ok:#1a7a3c; --warn:#d99a1c; }
+  * { box-sizing: border-box; margin: 0; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif; color: var(--text); background: var(--bg); line-height: 1.75; }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+  header { border-bottom: 1px solid var(--border); background: var(--bg2); }
+  .nav { display: flex; align-items: center; gap: 20px; height: 56px; }
+  .logo { font-weight: 600; font-size: 16px; }
+  .logo b { color: var(--accent); }
+  .nav a { color: var(--muted); text-decoration: none; font-size: 14px; }
+  .nav a:hover { color: var(--text); }
+  .nav .right { margin-left: auto; }
+  main { padding: 44px 0 56px; }
+  h1 { font-size: 26px; margin-bottom: 10px; }
+  h2 { font-size: 17px; margin: 32px 0 10px; padding-left: 10px; border-left: 3px solid var(--accent); }
+  p, li { font-size: 15px; }
+  ul { padding-left: 22px; }
+  li { margin: 5px 0; color: #2b3446; }
+  .tag { display: inline-block; background: #e8f5ec; color: var(--ok); border-radius: 6px; padding: 3px 12px; font-size: 13px; margin: 6px 0 4px; }
+  .meta { color: var(--muted); font-size: 13px; margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+  th, td { border: 1px solid var(--border); padding: 9px 12px; text-align: left; vertical-align: top; }
+  th { background: var(--bg2); font-weight: 600; }
+  td b { color: #b42318; }
+  .warn { background: #fdf6e7; border-left: 3px solid var(--warn); padding: 12px 16px; border-radius: 4px; margin: 16px 0; font-size: 14px; }
+  code { background: #f2f2f2; border-radius: 4px; padding: 1px 6px; font-size: 13px; }
+  footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 26px 0; color: var(--muted); font-size: 13px; }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo"><b>智填</b> FormPilot</div>
+    <a href="./">首页</a>
+    <a class="right" href="./">← 返回首页</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1>智填 FormPilot 隐私政策</h1>
+  <div class="tag">核心承诺：表单内容与你的档案，永不经过我们的服务器</div>
+  <p class="meta">最后更新：2026-09-15 · 适用于浏览器扩展「智填 FormPilot」（Chrome / Edge / Firefox / 360）</p>
+
+  <h2>概述</h2>
+  <p>智填 FormPilot 是一款辅助填写网页表单的浏览器扩展。我们的核心数据原则：</p>
+  <ul>
+    <li><b>本地优先</b>：你的档案与设置只保存在本机浏览器，我们无法访问；</li>
+    <li><b>最小发送</b>：只有你主动触发智能填报时，必要信息才会发给当前配置的大模型服务商（默认为内置的智谱免费模型，可自行更换为自己的服务商与接口地址）；</li>
+    <li><b>匿名统计</b>：可选的心跳统计只含 5 个无身份字段，不含任何用户内容。</li>
+  </ul>
+
+  <h2>收集与处理的数据</h2>
+  <table>
+    <thead>
+      <tr><th>数据</th><th>存储位置</th><th>是否离开本机</th><th>说明</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>我的档案（姓名、电话等）</td><td>本机 <code>chrome.storage.local</code></td><td>否</td><td>填报时用于本地匹配与提供权威信息</td></tr>
+      <tr><td>页面表单结构（字段名/类型/选项）</td><td>内存</td><td><b>仅发给你配置的模型服务</b></td><td>触发「智能填报」时随请求发送</td></tr>
+      <tr><td>你粘贴/上传的文件文字</td><td>内存</td><td><b>仅发给你配置的模型服务</b></td><td>上传文件在本地解析出文字后发送</td></tr>
+      <tr><td>你上传的图片 / 粘贴或截取的截图</td><td>内存</td><td><b>仅发给视觉模型</b></td><td>图片在本地裁剪/压缩后发给「视觉模型」转录文字，文字再进入材料链路；原图不落盘</td></tr>
+      <tr><td>页面已有值</td><td>不存储</td><td>默认不发送</td><td>需你在设置中显式勾选</td></tr>
+      <tr><td>API Key</td><td>本机 <code>chrome.storage.local</code></td><td>仅发往你配置的接口域名</td><td>请求时直连，不经第三方</td></tr>
+      <tr><td>匿名心跳</td><td>开发者统计服务（Cloudflare Worker）</td><td>是</td><td>仅：事件类型 / 版本号 / 浏览器类型 / 免费或专业版 / 当月次数</td></tr>
+    </tbody>
+  </table>
+  <p><b>不收集</b>：浏览历史、网页内容（表单之外）、个人身份信息、精确位置、cookie / 追踪器。</p>
+
+  <h2>数据流说明</h2>
+  <ul>
+    <li>智能填报链路：<code>页面字段 + 材料 → 扩展后台 → 你配置的模型 API（OpenAI 兼容协议）→ 回到扩展</code>。开发者不设中转服务器，无法看到这些内容。</li>
+    <li>大模型服务商对请求内容的处理遵循其各自的隐私条款，请选择可信服务商并设置消费限额。</li>
+    <li>OCR 功能（扫描件 PDF、上传的图片、粘贴/框选的截图）会把图片发给你在设置中配置的<b>视觉模型</b>，性质同上；未配置视觉模型时不会发送任何图片。</li>
+  </ul>
+
+  <h2>权限用途</h2>
+  <ul>
+    <li><code>storage</code>：本地保存设置与档案</li>
+    <li><code>scripting</code>、内容脚本：注入操作面板、读取与回填表单</li>
+    <li><code>activeTab</code>、<code>webNavigation</code>：确定扫描与回填的目标标签页；「截取页面」仅截取当前标签页的可见区域</li>
+    <li><code>contextMenus</code>：右键菜单入口</li>
+    <li><code>alarms</code>：每周一次的匿名活跃心跳</li>
+  </ul>
+
+  <h2>匿名统计（可选、最小化）</h2>
+  <ul>
+    <li>安装及每周活跃时，可能向开发者的统计服务发送一条匿名心跳，内容仅限：事件类型、插件版本号、浏览器类型、免费/专业版状态、当月填报次数。</li>
+    <li>不含任何页面内容、表单字段、文件、网址或个人身份信息。</li>
+    <li>卸载插件即停止；也可通过网络层屏蔽统计域名。</li>
+  </ul>
+
+  <h2>数据删除</h2>
+  <p>卸载扩展即删除全部本地数据（档案、设置、配额记录）。云端统计不含任何可关联到个人的信息。</p>
+
+  <div class="warn">建议使用官方或可信的大模型服务商，并为 API Key 设置消费限额。Key 仅保存在本机，请求时直接发往你配置的接口地址；「配置备份」导出的 JSON 默认<b>不含 API Key</b>，只有显式勾选才会导出完整配置。</div>
+
+  <h2>联系方式</h2>
+  <!-- TODO：换成真实联系邮箱（爱发电留言页亦可） -->
+  <p>如有隐私相关问题，请联系：<a href="mailto:support@your-domain.com">support@your-domain.com</a>（或通过<a href="https://afdian.com/a/aicreating" target="_blank" rel="noopener">爱发电主页</a>留言）。</p>
+</main>
+
+<footer>
+  <div class="wrap">
+    智填 FormPilot · <a href="./">首页</a> · <a href="https://afdian.com/a/aicreating" target="_blank" rel="noopener">购买专业版</a><br />
+    本政策随扩展更新而更新，重大变更会在更新说明中标注。
+  </div>
+</footer>
+
+</body>
+</html>

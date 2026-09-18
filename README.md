@@ -67,8 +67,10 @@ cp /f/aigen/chajian/landing/index.html /f/aigen/formpilot-site/index.html
 
 ## 待办（上架前后各一次）
 
-- [x] 建公开仓并完成首次推送：`main` = `8c9152e`（2026-09-18）
-- [ ] **在仓库 Settings → Pages 里开启发布**（Source 选 `Deploy from a branch` → `main` / `(root)`）；
-      未开启前 `https://zhankj2026.github.io/formpilot-site/` 返回 404
+- [x] 建公开仓并完成首次推送：`main` = `7674c28`、`92eefb4`（2026-09-18）
+- [x] 在仓库 Settings → Pages 开启发布（`Deploy from a branch` → `main` / `(root)`）——
+      **2026-09-18 已上线验收通过**，两个页面均 HTTP 200，且线上文件与本仓 md5 一致：
+      - 落地页 <https://zhankj2026.github.io/formpilot-site/>
+      - 隐私政策 <https://zhankj2026.github.io/formpilot-site/privacy.html>
 - [x] 页脚联系邮箱：已填 `285600131@qq.com`（`index.html` 页脚 + `privacy.html` 联系段落）
-- [ ] 商店链接：把 `YOUR-ID` 换成 Edge / Chrome 商店详情页真实 ID（`index.html` 的 `#download` 区块）
+- [ ] 商店链接：把 `YOUR-ID` 换成 Edge / Chrome 商店详情页真实 ID（`index.html` 的 `#download` 区块，共 3 处）

@@ -40,5 +40,5 @@ cp /f/aigen/chajian/landing/index.html /f/aigen/formpilot-site/index.html
 
 ## 待办（上架前后各一次）
 
-- [ ] 页脚联系邮箱：把 `support@your-domain.com` 换成真实邮箱（`index.html` + `privacy.html` 两处）
+- [x] 页脚联系邮箱：已填 `285600131@qq.com`（`index.html` 页脚 + `privacy.html` 联系段落）
 - [ ] 商店链接：把 `YOUR-ID` 换成 Edge / Chrome 商店详情页真实 ID（`index.html` 的 `#download` 区块）
